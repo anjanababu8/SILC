@@ -1,0 +1,32 @@
+decl
+	integer x;
+	integer factorial(integer n);
+enddecl
+
+
+integer factorial(integer n){
+decl
+	integer c,i;
+enddecl
+begin	
+	if(n < 2)
+	then
+		c = 1;
+	else
+		c = n*factorial(n-1);
+	endif;
+	return c;
+end
+}
+
+
+integer main(){
+decl
+	integer z;
+enddecl
+begin	
+	z = factorial(4);	
+	write(z);
+	return(0);
+end  
+}

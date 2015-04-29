@@ -1,0 +1,38 @@
+decl
+	integer x;
+	integer a[15];
+	integer swap(integer &a,&b);
+enddecl
+
+
+integer swap(integer &a,&b){
+decl
+	integer temp;
+enddecl
+begin	
+	temp = a;
+	a = b;
+	b = temp;
+	return 10;
+end
+}
+
+
+integer main(){
+decl
+	integer z,i,j;
+enddecl
+begin
+	
+	for(i=0;i<5;i = i+1){
+		read(x);
+		switch(x){
+			case 3 : write(x);break;
+			case 5 : write(x);break;
+			case 4 : write(x);break;
+			default : write(10000); break;
+		};
+	};
+	return(0);
+end  
+}

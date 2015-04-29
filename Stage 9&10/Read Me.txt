@@ -1,0 +1,45 @@
+FUNCTIONS DEFINITIONS
+
+For Main :  
+
+START
+1. Set SP to 0
+2. Push global variables(For the machine to access)
+3. Push BP
+4. Set BP to SP
+5. Push the local variables of main 
+6. CodGenerate body of main.
+7. Pop the local variables of main
+8. Pop BP
+9. Pop Global Variables
+HALT
+
+*Make sure u pop out everything u hav pushed.
+
+For Function:
+
+LABEL:
+1. Push BP
+2. Set BP to SP
+3. Push the local variables of function 
+4. CodGenerate of body of func
+5. CodGenerate of return expr.
+6. Push the return value to BP-2 of stack
+5. Pop the local variables of func
+8. Pop BP
+RET
+
+RET - will automatically POP Return Address and execute it so u need to worry abt it...when v reach back to the point where the functioncall occured v ll hav RETURNVALUE on stack top.
+CALL - will automatically PUSH the return address on to the stack
+
+On Function Call:
+1. Push all used Registers.(Save the reg say to OLDCOUNT)
+2. Push the arguments of function call
+3. Push Space for return value
+4. CALL Lable of function
+Now you are back. Save back the old register count
+5. Pop Return Value to a Register for use
+6. Pop the arguments. Update the values if its a Reference
+7. Pop all used Registers(Loop till OLDCOUNT) back to corresponding registers
+
+

@@ -1,0 +1,60 @@
+decl
+	integer a;
+	integer f(integer x);
+	integer g(integer x);
+enddecl
+
+
+integer f(integer x){
+decl
+	integer r,z;
+enddecl
+begin	
+	if(x==1)
+	then
+		r=1;
+	else
+		let(integer y=g(x))in 
+		begin					
+			let(integer z=y)in
+			begin
+				let(integer x=1-y+z+y)in
+				begin
+					r =x+z-y;
+				endlet
+			endlet
+		endlet
+	endif;
+	return r;
+end
+}
+
+integer g(integer x){
+decl
+	integer t;
+enddecl
+begin
+	if(x==1)
+	then
+		t=1;
+	else
+		t=1+g(x-1);
+	endif;
+	return t;
+end
+}
+
+integer main(){
+decl
+	integer n;
+enddecl
+begin
+	read(n);
+	write(f(n));
+	let(integer z=1)in
+	begin
+		write(z);
+	endlet
+	return(0);
+end  
+}

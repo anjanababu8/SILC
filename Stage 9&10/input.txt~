@@ -1,0 +1,84 @@
+decl
+	integer a[11],temp,quicksort(integer low,high),partition(integer low,high),swap(integer &a,&b),swap1(integer &a,&b);
+enddecl
+integer quicksort(integer low,high){
+	decl	
+		integer pivot,temp1;
+	enddecl
+	begin	
+		if(high>low) then
+			pivot = partition(low,high);
+			temp1 = quicksort(low,pivot-1);
+			temp1 = quicksort(pivot+1,high);
+		endif;
+		return 11;
+	end
+}
+integer swap1(integer &a,&b){
+	decl
+		integer temp;
+	enddecl
+	begin
+		temp = a;
+		a = b;
+		b = temp;
+		return 1;
+	end
+}
+
+integer swap(integer &a,&b){
+	decl
+		integer temp;
+	enddecl
+	begin
+		temp = swap1(a,b);
+		return 1;
+	end
+}
+
+integer partition(integer low,high){
+	decl
+		integer left,right,pivotItem,temp;
+	enddecl
+	begin	
+		pivotItem = a[low];
+		left = low;
+		right = high;
+		while(left<right) do
+			while(a[left]<=pivotItem) do
+				left = left + 1;
+			endwhile;
+			while(a[right]>pivotItem) do
+				right = right - 1;
+			endwhile;
+			if(left<right) then
+				temp = swap(a[left],a[right]);
+			endif;
+		endwhile;
+		a[low] = a[right];
+		a[right] = pivotItem;
+		return right;	
+	end
+}
+integer main(){
+	decl
+		integer i,temp1;
+	enddecl
+	begin
+		i = 1;
+		while(i<=10) do
+			read(a[i]);
+			i = i + 1;
+		endwhile;
+		temp1 = quicksort(0,10);
+		write(111111111);
+		i = 1;
+		while(i<=10) do
+			write(a[i]);
+			i = i + 1;
+		endwhile;
+		
+		return(1);
+	end
+}
+

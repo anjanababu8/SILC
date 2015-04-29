@@ -1,0 +1,35 @@
+decl
+	integer x;
+	integer a[15];
+	integer swap(integer &a,&b);
+enddecl
+
+
+integer swap(integer &a,&b){
+decl
+	integer temp;
+enddecl
+begin	
+	temp = a;
+	a = b;
+	b = temp;
+	return 10;
+end
+}
+
+
+integer main(){
+decl
+	integer z,i,j;
+enddecl
+begin
+	i = 10;
+	j = 100;
+	write(i);
+	write(j);
+	z = swap(i,j);
+	write(i);
+	write(j);	
+	return(0);
+end  
+}

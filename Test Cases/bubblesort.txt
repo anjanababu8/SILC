@@ -1,0 +1,38 @@
+decl
+	integer a[10];
+	integer i,j,temp;
+	boolean z,x;
+enddecl 
+integer main(){
+begin
+	i=0;
+	while(i<10)
+	do
+		read(a[i]);
+		i = i + 1;
+	endwhile;
+	write(12345678);
+	i = 0;
+	while(i<10)
+	do
+		j=i+1;
+		while(j<10)
+		do
+			if(a[i]>a[j])
+			then
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			endif;
+			j = j + 1;
+		endwhile;
+		i= i +1;
+	endwhile;
+	i=0;
+	while(i<10)
+	do
+		write(a[i]);
+		i = i + 1;
+	endwhile;
+end  
+}

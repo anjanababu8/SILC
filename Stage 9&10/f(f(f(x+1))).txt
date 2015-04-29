@@ -1,0 +1,32 @@
+decl
+	integer a;
+	integer f(integer x);
+enddecl
+
+
+integer f(integer x){
+decl
+	integer r;
+enddecl
+begin	
+	if(x>=80)
+	then 
+		r = 80;
+	else
+		r = f(f(f(x+1) + 1) + 1);
+	endif;	
+	return r;
+end
+}
+
+
+integer main(){
+decl
+	integer z;
+enddecl
+begin
+	read(z);
+	write(f(z));
+	return(0);
+end  
+}

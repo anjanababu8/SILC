@@ -1,0 +1,18 @@
+decl
+	integer z[10],i,a,b;
+	boolean x;
+enddecl 
+integer main(){
+begin
+	if(3<2)
+	then
+		write(40);
+	else
+		if(4==5)
+		then
+			write(20);
+		endif;
+	endif;
+		
+end  
+}
